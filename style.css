@@ -1,15 +1,12 @@
 * {
     box-sizing: border-box;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 #buttons,
 #left-side,
-#right-side,
-#top-row,
-#row-1,
-#row-2,
-#row-3,
-#bottom-row {
+#right-side {
     display: flex;
     flex: 1;
 }
@@ -50,6 +47,7 @@ body {
 
 #left-side .button {
     flex: 1 1 calc(33.333% - 10px);
+    
 }
 
 #right-side {
@@ -63,17 +61,26 @@ body {
     height: calc(25% - 10px); 
 }
 
-#bottom-row {
-    flex: 1 1 calc(66.666% - 10px); /* Ensures the "0" and "." buttons span 2 columns */
+
+#bottom {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    gap: 5px;
+    /* outline: solid 2px red; */
 }
 
-.number {
-    flex: 1 1 30%;
-    flex-wrap: wrap;
+#bottom #num-0 {
+    flex: 2.15;
+    /* outline: solid 2px red; */
+}
+#bottom #dot {
+    flex: 1;
+    /* outline: solid 2px red; */
 }
 
 #plus {
-    flex: 2.04;
+    flex: 2.1;
 }
 
 #backspace,
@@ -82,14 +89,17 @@ body {
     flex: 1;
 }
 
+#buttons {
+    margin-top: 12px;
+    height: 100%;
+    gap: 5px;
+}
+
 .button {
-    flex: 1 1 calc(33.333% - 10px); 
     margin: 2px;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* cursor: pointer;
-    background: white; */
     outline: solid 2px red;
 }
