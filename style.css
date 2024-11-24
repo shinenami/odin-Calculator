@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+#buttons,
+#left-side,
+#right-side,
+#top-row,
+#row-1,
+#row-2,
+#row-3,
+#bottom-row {
+    display: flex;
+    flex: 1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 300px;
+    padding: 12px;
+    border: solid 4px grey;
+    border-radius: 8px;
+}
+
+#display {
+    border: solid 4px grey;
+    padding: 8px 4px 0px;
+}
+
+#display-text {
+    text-align: right;
+    font-size: 36px;
+}
+
+#left-side{
+    flex-wrap: wrap;
+    flex: 3;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+#left-side .button {
+    flex: 1 1 calc(33.333% - 10px);
+}
+
+#right-side {
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1; 
+    gap: 5px; 
+}
+
+#right-side .button {
+    height: calc(25% - 10px); 
+}
+
+#bottom-row {
+    flex: 1 1 calc(66.666% - 10px); /* Ensures the "0" and "." buttons span 2 columns */
+}
+
+.number {
+    flex: 1 1 30%;
+    flex-wrap: wrap;
+}
+
+#plus {
+    flex: 2.04;
+}
+
+#backspace,
+#minus,
+#equal {
+    flex: 1;
+}
+
+.button {
+    flex: 1 1 calc(33.333% - 10px); 
+    margin: 2px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* cursor: pointer;
+    background: white; */
+    outline: solid 2px red;
+}
