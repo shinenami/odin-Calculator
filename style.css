@@ -11,18 +11,20 @@
     margin: 0;
     padding: 0;
 }
-#buttons,
-#left-side,
-#right-side {
-    display: flex;
-    flex: 1;
-}
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 95%; */
+    min-height: 100vh;
+    margin: 0;
+}
+
+#buttons,
+#left-side,
+#right-side {
+    display: flex;
+    flex: 1;
 }
 
 #calculator {
@@ -33,6 +35,7 @@ body {
     padding: 12px;
     border: solid 4px grey;
     border-radius: 8px;
+    margin: 20px auto;
 }
 
 #display {
