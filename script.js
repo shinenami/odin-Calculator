@@ -19,8 +19,6 @@ const buttons = document.getElementById("buttons")
 inputA.textContent = "123456"
 
 function operate(A, operator, B) {
-    // B = (B == '' ? A : B)
-    // operator = (operator == '' ? '+' : operator)
 
     return operator == '+' ? sum(A, B) :
     operator == '-' ? sub(A, B) :
