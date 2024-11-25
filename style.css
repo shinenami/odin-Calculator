@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: url('fonts/digital-7.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
     text-align: center;
@@ -15,7 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95vh;
+    /* height: 95%; */
 }
 
 #calculator {
@@ -31,7 +38,9 @@ body {
 #display {
     border: solid 4px grey;
     padding: 8px 4px 0px;
-}
+    font-family: 'Digital-7';
+    box-shadow: inset 10px 15px 65px rgba(0, 0, 0, 0.1);
+} 
 
 #display-text {
     text-align: right;
@@ -71,7 +80,7 @@ body {
 }
 
 #bottom #num-0 {
-    flex: 2.15;
+    flex: 2.27;
     /* outline: solid 2px red; */
 }
 #bottom #dot {
@@ -80,7 +89,7 @@ body {
 }
 
 #plus {
-    flex: 2.1;
+    flex: 2.2;
 }
 
 #backspace,
