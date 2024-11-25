@@ -8,7 +8,7 @@ function multiply(a, b) {
     return a * b
 }
 function divide(a, b) {
-    return a / b
+    return b == 0 ? 'bruh' : a / b
 }
 
 const inputA = document.getElementById("inputA")
@@ -16,9 +16,12 @@ const inputB = document.getElementById("inputB")
 const inputOperator = document.getElementById("operator")
 const buttons = document.getElementById("buttons")
 
-inputA.textContent = "1234"
+inputA.textContent = "123456"
 
-function operate(A, operator = '+', B = A) {
+function operate(A, operator, B) {
+    // B = (B == '' ? A : B)
+    // operator = (operator == '' ? '+' : operator)
+
     return operator == '+' ? sum(A, B) :
     operator == '-' ? sub(A, B) :
     operator == '*' ? multiply(A, B) :
@@ -31,9 +34,9 @@ function changeDisplay(button) {
 }
 
 function clear() {
-    inputA.textContent = '1234'
-    inputOperator.textContent = '+'
-    inputB.textContent = '567'
+    inputA.textContent = '0'
+    inputOperator.textContent = ''
+    inputB.textContent = ''
 }
 
 function backspace() {
@@ -59,16 +62,33 @@ function addNum (num) {
     if (inputOperator.textContent != '') {
         inputB.textContent += num
     } else {
-        inputA.textContent += num
+        inputA.textContent = (inputA.textContent == 0 ? num : inputA.textContent + num)
     }
+}
+
+function addOperator (opr) {
+    
+    if (inputOperator.textContent != '' && inputB.textContent != '') {
+        equal()
+        inputOperator.textContent = opr
+    } else {
+        inputOperator.textContent = opr
+    }
+}
+function equal() {
+    inputA.textContent = operate(+inputA.textContent, inputOperator.textContent, +inputB.textContent)
+    inputB.textContent = ''
+    inputOperator.textContent =  ''
 }
 
 buttons.addEventListener("click", (e) => {
     if (e.target.classList.contains('number')) {
-            addNum(e.target.id.slice(4))
+        addNum(e.target.id.slice(4))
+        return
     }
     if (e.target.classList.contains('operator')) {
-        
+        addOperator(e.target.textContent)
+        return
     }
     if (e.target.classList.contains('utility')) {
         switch (e.target.id) {
@@ -77,7 +97,9 @@ buttons.addEventListener("click", (e) => {
                 break;
             case 'backspace':
                 backspace()
-                console.log('back')
+                break;
+            case 'equal':
+                equal()
                 break;
         }
     }
