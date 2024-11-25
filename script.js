@@ -31,30 +31,41 @@ function changeDisplay(button) {
 }
 
 function clear() {
-    inputA.textContent = '0'
-    inputOperator.textContent = ''
-    inputB.textContent = ''
+    inputA.textContent = '1234'
+    inputOperator.textContent = '+'
+    inputB.textContent = '567'
 }
 
 function backspace() {
     if (inputB.textContent != '') {
         inputB.textContent = inputB.textContent.slice(0, -1)
+        return
     }
     if (inputOperator.textContent != '') {
         inputOperator.textContent = inputOperator.textContent.slice(0, -1)
+        return
     }
     if (inputA.textContent != '') {
         inputA.textContent = inputA.textContent.slice(0, -1)
     }
-    
+
     if (inputA.textContent.length == 0) {
         inputA.textContent = '0'
     }
 }
 
+
+function addNum (num) {
+    if (inputOperator.textContent != '') {
+        inputB.textContent += num
+    } else {
+        inputA.textContent += num
+    }
+}
+
 buttons.addEventListener("click", (e) => {
     if (e.target.classList.contains('number')) {
-        
+            addNum(e.target.id.slice(4))
     }
     if (e.target.classList.contains('operator')) {
         
@@ -68,7 +79,6 @@ buttons.addEventListener("click", (e) => {
                 backspace()
                 console.log('back')
                 break;
-
         }
     }
 })
