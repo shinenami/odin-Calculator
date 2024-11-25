@@ -1,118 +1,119 @@
 @font-face {
-    font-family: 'Digital-7';
-    src: url('fonts/digital-7.regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Digital-7";
+  src: url("fonts/digital-7.regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
-    box-sizing: border-box;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 #buttons,
 #left-side,
 #right-side {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 #calculator {
-    display: flex;
-    flex-direction: column;
-    height: 450px;
-    width: 300px;
-    padding: 12px;
-    border: solid 4px grey;
-    border-radius: 8px;
-    margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 300px;
+  padding: 12px;
+  border: solid 4px rgb(0, 0, 0);
+  border-radius: 8px;
+  margin: 20px auto;
+  flex-shrink: 0;
+  background-color: rgb(49, 49, 49);
 }
 
 #display {
-    border: solid 4px grey;
-    padding: 8px 4px 0px;
-    font-family: 'Digital-7';
-    box-shadow: inset 10px 15px 65px rgba(0, 0, 0, 0.1);
-} 
+  background-color: antiquewhite;
+  position: relative;
+  height: 90px;
+  border: solid 4px grey;
+  padding: 8px 10px 0px;
+  font-family: "Digital-7";
+  box-shadow: inset 10px 15px 65px rgba(0, 0, 0, 0.1);
+}
 
 #display-text {
-    text-align: right;
-    font-size: 36px;
+  /* position: relative; */
+  text-align: right;
+  /* margin-left: -10px; */
+  font-size: 36px;
 }
 
-#left-side{
-    flex-wrap: wrap;
-    flex: 3;
-    justify-content: space-between;
-    gap: 5px;
+#inputA {
+  font-size: 52px;
+  position: absolute;
+  transform: translate(-100%, 35%);
 }
 
-#left-side .button {
-    flex: 1 1 calc(33.333% - 10px);
-    
+#operator {
+  position: relative;
+  /* margin-left: -10px; */
+  /* margin-right: -10px; */
+  /* visibility: hidden; */
 }
 
-#right-side {
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1; 
-    gap: 5px; 
+#bg-numbers {
+  position: absolute;
+  top: 10%;
+  /* left: 12px; */
+  /* width: 100%; */
+  font-size: 36px;
+  /* color: rgba(0, 0, 0, 0.3); */
+  opacity: 25%;
+  text-align: right;
+  z-index: 1; /* Below #display-text */
+  pointer-events: none; /* Ensure it doesn’t interfere with user interaction */
 }
+
+/*-------
+Buttons
+--------*/
 
 #right-side .button {
-    height: calc(25% - 10px); 
-}
-
-
-#bottom {
-    display: flex;
-    justify-content: space-around;
-    flex: 1;
-    gap: 5px;
-    /* outline: solid 2px red; */
-}
-
-#bottom #num-0 {
-    flex: 2.27;
-    /* outline: solid 2px red; */
-}
-#bottom #dot {
-    flex: 1;
-    /* outline: solid 2px red; */
-}
-
-#plus {
-    flex: 2.2;
-}
-
-#backspace,
-#minus,
-#equal {
-    flex: 1;
+  height: calc(25% - 10px);
 }
 
 #buttons {
-    margin-top: 12px;
-    height: 100%;
-    gap: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  height: 16px;
+  gap: 5px;
+  flex: 1;
+}
+
+#clear,
+#num-0 {
+  flex: 1 0 calc(50% - 8px);
 }
 
 .button {
-    margin: 2px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    outline: solid 2px red;
+  margin: 2px;
+  font-size: 20px;
+  flex: 1 0 calc(25% - 10px);
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  /* outline: solid 2px red; */
 }
