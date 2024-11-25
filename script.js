@@ -8,7 +8,7 @@ function multiply(a, b) {
     return a * b
 }
 function divide(a, b) {
-    return b == 0 ? 'bruh' : a / b
+    return b == 0 ? 'bruh' : parseFloat((a / b).toFixed(3))
 }
 
 const inputA = document.getElementById("inputA")
@@ -79,6 +79,21 @@ function equal() {
     inputOperator.textContent =  ''
 }
 
+function handleDot () {
+    if (inputOperator.textContent != '' && inputB.textContent == '') return;
+    
+    if (inputOperator.textContent != '' && inputB.textContent != '') {
+        if (!inputB.textContent.includes('.')) {
+            inputB.textContent += '.';
+        }
+        return;
+    }
+
+    if (!inputA.textContent.includes('.')) {
+        inputA.textContent += '.'
+    }
+}
+
 buttons.addEventListener("click", (e) => {
     if (e.target.classList.contains('number')) {
         addNum(e.target.id.slice(4))
@@ -99,6 +114,10 @@ buttons.addEventListener("click", (e) => {
             case 'equal':
                 equal()
                 break;
+            case 'dot':
+                handleDot()
+                break;
         }
+        return
     }
 })
