@@ -18,6 +18,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  background: linear-gradient(to bottom right, #21aeff, #ff21f4);
 }
 
 #buttons,
@@ -30,57 +31,42 @@ body {
 #calculator {
   display: flex;
   flex-direction: column;
-  height: 450px;
-  width: 300px;
+  min-height: 600px;
+  height: auto;
+  width: 400px;
   padding: 12px;
-  border: solid 4px rgb(0, 0, 0);
-  border-radius: 8px;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-radius: 12px;
   margin: 20px auto;
   flex-shrink: 0;
   background-color: rgb(49, 49, 49);
 }
 
 #display {
-  background-color: antiquewhite;
+  background-color: rgb(27, 27, 27);
   position: relative;
-  height: 90px;
-  border: solid 4px grey;
-  padding: 8px 10px 0px;
+  min-height: 120px;
+  flex-shrink: 0;
+  color: white;
+  text-wrap:wrap;
+  word-wrap: break-word;
+  border: solid 4px rgb(82, 82, 82);
+  border-radius: 10px;
+  padding: 8px 8px 0px;
   font-family: "Digital-7";
+  font-size: 60px;
   box-shadow: inset 10px 15px 65px rgba(0, 0, 0, 0.1);
 }
 
-#display-text {
-  /* position: relative; */
+#top-wrap {
+  font-size: 40px;
+  min-height: 1em;
+  color: rgb(179, 179, 179);
+}
+
+#top-wrap,
+#bot-wrap {
   text-align: right;
-  /* margin-left: -10px; */
-  font-size: 36px;
-}
-
-#inputA {
-  font-size: 52px;
-  position: absolute;
-  transform: translate(-100%, 35%);
-}
-
-#operator {
-  position: relative;
-  /* margin-left: -10px; */
-  /* margin-right: -10px; */
-  /* visibility: hidden; */
-}
-
-#bg-numbers {
-  position: absolute;
-  top: 10%;
-  /* left: 12px; */
-  /* width: 100%; */
-  font-size: 36px;
-  /* color: rgba(0, 0, 0, 0.3); */
-  opacity: 25%;
-  text-align: right;
-  z-index: 1; /* Below #display-text */
-  pointer-events: none; /* Ensure it doesn’t interfere with user interaction */
 }
 
 /*-------
@@ -89,21 +75,21 @@ Buttons
 
 #buttons {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   margin-top: 12px;
   height: 16px;
   gap: 5px;
-  flex: 1;
+  flex-shrink: 0;
 }
 
-/* #clear, */
 #num-0 {
   flex: 1 0 calc(50% - 8px);
 }
 
 
 .button {
+  border-radius: 8px;
+  border: 0;
   margin: 1px;
   font-size: 20px;
   flex: 1 0 calc(25% - 10px);
@@ -114,7 +100,8 @@ Buttons
   user-select: none;
   background-color: rgb(100, 100, 100);
   color: azure;
-  font-size: 24px;
+  font-size: 34px;
+  height: 88px;
   /* outline: solid 2px red; */
 }
 
@@ -132,4 +119,25 @@ button span {
 
 #clear {
   background-color: rgb(255, 95, 95);
+}
+
+#pmplus {
+  margin-bottom: 12px;
+  font-size: 24px;
+  transform: translate(10%);
+}
+#pmminus {
+  margin-top: 4px;
+  font-size: 28px;
+  transform: translate(-10%);
+}
+#backspace span {
+  margin-bottom: 8px;
+}
+#multiply span {
+  font-size: 48px;
+  margin-top: 18px;
+}
+#minus {
+  font-size: 48px;
 }

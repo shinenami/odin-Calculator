@@ -10,23 +10,24 @@
 <body>
     <div id="calculator">
         <div id="display">
-            <div id="display-text">
-                <span id="inputA" class="shrinked">1234567890</span>
-                <span id="operator" class="shrinked"></span>
-                <span id="inputB" class="shrinked"></span>
+            <div id="top-wrap" class="display-text">
+                <span id="operator"></span>
             </div>
-            <!-- <div id="bg-numbers">88888888</div> -->
+            <div id="bot-wrap" class="display-text">
+                <span id="inputB"></span>
+                <span id="inputA"></span>
+            </div>
         </div>
 
         <div id="buttons">
                 <button id="clear" class="utility button">C</button>
-                <button id="backspace" class="utility button">&#x232B;</button>
-                <button id="plus-minus" class="utility button"><span>+</span>/<span>-</span></button>
+                <button id="backspace" class="utility button"><span>&#x232B;</span></button>
+                <button id="plus-minus" class="utility button"><span id="pmplus">+</span>/<span id="pmminus">-</span></button>
                 <button id="divide" class="operator button">/</button>
                 <button id="num-7" class="number button">7</button>
                 <button id="num-8" class="number button">8</button>
                 <button id="num-9" class="number button">9</button>
-                <button id="multiply" class="operator button">*</button>
+                <button id="multiply" class="operator button"><span>*</span></button>
                 <button id="num-4" class="number button">4</button>
                 <button id="num-5" class="number button">5</button>
                 <button id="num-6" class="number button">6</button>

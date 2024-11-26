@@ -2,7 +2,10 @@ const inputA = document.getElementById("inputA")
 const inputB = document.getElementById("inputB")
 const inputOperator = document.getElementById("operator")
 const buttons = document.getElementById("buttons")
-inputA.textContent = "123456"
+const topw = document.getElementById("top-wrap")
+const botw = document.getElementById("bot-wrap")
+
+inputA.textContent = "12454366"
 
 function sum(a, b) {
     return a + b
@@ -26,14 +29,21 @@ function operate(A, operator, B) {
     sum(A, A)
 }
 
-function changeDisplay(button) {
-
+function changeDisplay(c) {
+    switch (c) {
+        case 'toTop':
+            topw.insertBefore(inputA, inputOperator)
+            break;
+        case 'reset':
+            botw.appendChild(inputA)
+    }
 }
 
 function clear() {
     inputA.textContent = '0'
     inputOperator.textContent = ''
     inputB.textContent = ''
+    changeDisplay('reset')
 }
 
 function backspace() {
@@ -69,6 +79,7 @@ function addOperator (opr) {
         equal()
         inputOperator.textContent = opr
     } else {
+        changeDisplay('toTop')
         inputOperator.textContent = opr
     }
 }
@@ -76,6 +87,7 @@ function equal() {
     inputA.textContent = operate(+inputA.textContent, inputOperator.textContent, +inputB.textContent)
     inputB.textContent = ''
     inputOperator.textContent =  ''
+    changeDisplay('reset')
 }
 
 function handleDot () {
