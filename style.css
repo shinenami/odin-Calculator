@@ -21,7 +21,6 @@ body {
   background: linear-gradient(to bottom right, #21aeff, #ff21f4);
 }
 
-
 #calculator {
   display: flex;
   flex-direction: column;
@@ -46,7 +45,7 @@ Display
   min-height: 120px;
   flex-shrink: 0;
   color: white;
-  text-wrap:wrap;
+  text-wrap: wrap;
   word-wrap: break-word;
   border: solid 4px rgb(82, 82, 82);
   border-radius: 10px;
@@ -116,7 +115,7 @@ button span {
 }
 
 .operator {
-  background-color:rgb(255, 157, 45)
+  background-color: rgb(255, 157, 45);
 }
 
 #clear {
