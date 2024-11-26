@@ -170,7 +170,7 @@ buttons.addEventListener("click", (e) => {
 // Keyboard support
 document.addEventListener("keydown", (e) => {
   if (e.key >= 0 && e.key <= 9) addNum(e.key);
-  if (e.key == ".") handleDot();
+  if (e.key == "." || e.key == ',') handleDot();
   if (
     (e.shiftKey && e.key == "+") ||
     (!e.shiftKey &&
