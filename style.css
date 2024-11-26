@@ -103,7 +103,15 @@ Buttons
   color: azure;
   font-size: 34px;
   height: 88px;
+  cursor: pointer;
   /* outline: solid 2px red; */
+}
+
+.button:hover {
+  filter: brightness(1.2);
+}
+.button:active {
+  filter: brightness(0.8);
 }
 
 button span {
