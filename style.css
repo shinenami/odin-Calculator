@@ -87,10 +87,6 @@ body {
 Buttons
 --------*/
 
-#right-side .button {
-  height: calc(25% - 10px);
-}
-
 #buttons {
   display: flex;
   flex-direction: row;
@@ -106,8 +102,9 @@ Buttons
   flex: 1 0 calc(50% - 8px);
 }
 
+
 .button {
-  margin: 2px;
+  margin: 1px;
   font-size: 20px;
   flex: 1 0 calc(25% - 10px);
   flex-grow: 1;
@@ -115,5 +112,20 @@ Buttons
   justify-content: center;
   align-items: center;
   user-select: none;
+  background-color: rgb(100, 100, 100);
+  color: azure;
+  font-size: 24px;
   /* outline: solid 2px red; */
+}
+
+#equal {
+  background-color: rgb(71, 202, 45);
+}
+
+.operator {
+  background-color:rgb(255, 157, 45)
+}
+
+#clear {
+  background-color: rgb(255, 95, 95);
 }
