@@ -21,9 +21,7 @@ body {
   background: linear-gradient(to bottom right, #21aeff, #ff21f4);
 }
 
-#buttons,
-#left-side,
-#right-side {
+#buttons {
   display: flex;
   flex: 1;
 }
@@ -52,7 +50,7 @@ body {
   word-wrap: break-word;
   border: solid 4px rgb(82, 82, 82);
   border-radius: 10px;
-  padding: 8px 8px 0px;
+  padding: 8px 12px 0px;
   font-family: "Digital-7";
   font-size: 60px;
   box-shadow: inset 10px 15px 65px rgba(0, 0, 0, 0.1);
@@ -67,6 +65,10 @@ body {
 #top-wrap,
 #bot-wrap {
   text-align: right;
+}
+
+#operator {
+  margin-left: 12px;
 }
 
 /*-------

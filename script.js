@@ -5,7 +5,7 @@ const buttons = document.getElementById("buttons")
 const topw = document.getElementById("top-wrap")
 const botw = document.getElementById("bot-wrap")
 
-inputA.textContent = "12454366"
+inputA.textContent = "0"
 
 function sum(a, b) {
     return a + b
@@ -69,7 +69,7 @@ function addNum (num) {
     if (inputOperator.textContent != '') {
         inputB.textContent += num
     } else {
-        inputA.textContent = (inputA.textContent == 0 ? num : inputA.textContent + num)
+        inputA.textContent = (inputA.textContent === 0 ? num : inputA.textContent + num)
     }
 }
 
@@ -91,8 +91,11 @@ function equal() {
 }
 
 function handleDot () {
-    if (inputOperator.textContent != '' && inputB.textContent == '') return;
-    
+    if (inputOperator.textContent != '' && inputB.textContent == '') {
+        inputB.textContent = '0.';
+        return;
+    }
+
     if (inputB.textContent != '' && !inputB.textContent.includes('.')) {
         inputB.textContent += '.';
         return;
