@@ -74,7 +74,11 @@ function addNum(num) {
     inputB.textContent += num;
   } else {
     inputA.textContent =
-      inputA.textContent === '0.' ? inputA.textContent + num : inputA.textContent == 0 ? num : inputA.textContent + num;
+      inputA.textContent === "0."
+        ? inputA.textContent + num
+        : inputA.textContent == 0
+        ? num
+        : inputA.textContent + num;
   }
 }
 
@@ -129,6 +133,7 @@ function handlePlusMinus() {
   }
 }
 
+// Event delegation for buttons
 buttons.addEventListener("click", (e) => {
   console.log(e.target);
   if (e.target.classList.contains("number")) {
@@ -162,13 +167,18 @@ buttons.addEventListener("click", (e) => {
   }
 });
 
-
+// Keyboard support
 document.addEventListener("keydown", (e) => {
-    if (e.key >= 0 && e.key <= 9) addNum(e.key)
-    if (e.key == '.') handleDot()
-    if ((e.shiftKey && e.key == '+') || (!e.shiftKey && (e.key == '+' || e.key == '-' || e.key == '*' || e.key == '/'))) addOperator(e.key)
-    if (e.key == 'Escape') clear()
-    if (e.key == 'Backspace') backspace()
-    if (e.key == 'Enter' || e.key == '=') equal()
-    if (e.shiftKey && e.key == '-' || e.key == '_') handlePlusMinus()
-})
+  if (e.key >= 0 && e.key <= 9) addNum(e.key);
+  if (e.key == ".") handleDot();
+  if (
+    (e.shiftKey && e.key == "+") ||
+    (!e.shiftKey &&
+      (e.key == "+" || e.key == "-" || e.key == "*" || e.key == "/"))
+  )
+    addOperator(e.key);
+  if (e.key == "Escape") clear();
+  if (e.key == "Backspace") backspace();
+  if (e.key == "Enter" || e.key == "=") equal();
+  if ((e.shiftKey && e.key == "-") || e.key == "_") handlePlusMinus();
+});
