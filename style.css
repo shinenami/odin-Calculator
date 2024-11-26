@@ -97,7 +97,7 @@ Buttons
   flex: 1;
 }
 
-#clear,
+/* #clear, */
 #num-0 {
   flex: 1 0 calc(50% - 8px);
 }
@@ -116,6 +116,10 @@ Buttons
   color: azure;
   font-size: 24px;
   /* outline: solid 2px red; */
+}
+
+button span {
+  pointer-events: none;
 }
 
 #equal {

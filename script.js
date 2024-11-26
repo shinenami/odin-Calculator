@@ -1,3 +1,9 @@
+const inputA = document.getElementById("inputA")
+const inputB = document.getElementById("inputB")
+const inputOperator = document.getElementById("operator")
+const buttons = document.getElementById("buttons")
+inputA.textContent = "123456"
+
 function sum(a, b) {
     return a + b
 }
@@ -10,13 +16,6 @@ function multiply(a, b) {
 function divide(a, b) {
     return b == 0 ? 'bruh' : parseFloat((a / b).toFixed(3))
 }
-
-const inputA = document.getElementById("inputA")
-const inputB = document.getElementById("inputB")
-const inputOperator = document.getElementById("operator")
-const buttons = document.getElementById("buttons")
-
-inputA.textContent = "123456"
 
 function operate(A, operator, B) {
 
@@ -82,10 +81,8 @@ function equal() {
 function handleDot () {
     if (inputOperator.textContent != '' && inputB.textContent == '') return;
     
-    if (inputOperator.textContent != '' && inputB.textContent != '') {
-        if (!inputB.textContent.includes('.')) {
-            inputB.textContent += '.';
-        }
+    if (inputB.textContent != '' && !inputB.textContent.includes('.')) {
+        inputB.textContent += '.';
         return;
     }
 
@@ -94,7 +91,23 @@ function handleDot () {
     }
 }
 
+function handlePlusMinus() {
+    if (inputB.textContent !== '') {
+        inputB.textContent[0] == '-' ? 
+        inputB.textContent = inputB.textContent.slice(1) :
+        inputB.textContent = '-' + inputB.textContent
+        return
+    }
+
+    if (inputA.textContent !== '0') {
+        inputA.textContent[0] == '-' ? 
+        inputA.textContent = inputA.textContent.slice(1) :
+        inputA.textContent = '-' + inputA.textContent
+    }    
+}
+
 buttons.addEventListener("click", (e) => {
+    console.log(e.target)
     if (e.target.classList.contains('number')) {
         addNum(e.target.id.slice(4))
         return
@@ -116,6 +129,10 @@ buttons.addEventListener("click", (e) => {
                 break;
             case 'dot':
                 handleDot()
+                break;
+            case 'plus-minus':
+                handlePlusMinus()
+                console.log("hpm")
                 break;
         }
         return
