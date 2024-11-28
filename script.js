@@ -76,7 +76,7 @@ function addNum(num) {
     inputA.textContent =
       inputA.textContent === "0."
         ? inputA.textContent + num
-        : inputA.textContent == 0
+        : inputA.textContent === "0"
         ? num
         : inputA.textContent + num;
   }
@@ -85,7 +85,9 @@ function addNum(num) {
 function addOperator(opr) {
   if (inputOperator.textContent != "" && inputB.textContent != "") {
     equal();
+    changeDisplay("reset")
     inputOperator.textContent = opr;
+    changeDisplay("toTop")
   } else {
     changeDisplay("toTop");
     inputOperator.textContent = opr;
